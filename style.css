@@ -1,20 +1,22 @@
 
 /* General Styles */
-html,body {
-  font-family: 'Times New Roman', Times, serif;
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  background-color:rgba(248, 248, 255, 0.833) ;
-  min-height: 100vh;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: rgba(248, 248, 255, 0.833);
+  font-family: 'Times New Roman', Times, serif;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
-  background: linear-gradient(to top, navy,hsl(240, 100%, 15%));
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(to top, navy, hsl(240, 100%, 15%));
   color: white;
   padding: 1.5rem;
   display: flex;
@@ -41,17 +43,15 @@ footer{
 
 main {
   flex: 1;
-  padding: 1rem;
-  font-family: 'Arial', sans-serif;
-  margin: 30px ;
   max-width: 400px;
+  margin: 20px ;
+  padding: 1rem;
   background-color: navy;
   color: white;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
-  display: flex ;
+  display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
 }
 
@@ -70,6 +70,8 @@ main {
   padding: 0.5rem;
   border: none;
   border-radius: 5px;
+  font-size: 1rem;
+
 }
 input[type="date"] {
   width: 100%;
@@ -87,8 +89,6 @@ input[type="date"] {
   background: hsl(212, 72%, 49%);
   color: white;
   cursor: pointer;
-  font-size: 1em;
-  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
@@ -101,6 +101,7 @@ input[type="date"] {
   margin-bottom: 1rem;
   display: flex;
   gap: 0.7rem;
+  justify-content: center;
 }
 
 .filter-btn {
@@ -120,14 +121,14 @@ input[type="date"] {
 ul {
   list-style: none;
   padding: 0;
+  width: 100%;
 }
 
 li { 
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
-  flex-wrap: wrap; 
   background: white;
   color: black;
   margin: 0.5rem 0;
@@ -136,6 +137,7 @@ li {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, opacity 0.3s ease;
   animation: fadeIn 0.4s ease;
+
 }
 li:hover {
   transform: scale(1.02);
@@ -146,8 +148,7 @@ li:hover {
 }
 
 .task-info {
-  flex: 1; 
-  min-width: 0; 
+  flex: 1;  
   word-wrap: break-word;
 }
 
@@ -157,6 +158,11 @@ li:hover {
 }
 
 /* Buttons inside tasks */
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .task-actions button {
   margin-left: 1rem;
   padding: 0.3rem 0.6rem;
@@ -166,20 +172,9 @@ li:hover {
   font-weight: bold;
 }
 
-.complete-btn {
-  background: #03973e;
-  color: white;
-}
-
-.delete-btn {
-  background: #c81602;
-  color: white;
-}
-
-.edit-btn {
-  background: #ec9304;
-  color: white;
-}
+.complete-btn { background: #03973e; color: white; }
+.delete-btn   { background: #c81602; color: white; }
+.edit-btn     { background: #ec9304; color: white; }
 
 /* Dark theme styles */
 #theme-toggle{
@@ -214,7 +209,7 @@ li:hover {
 @media (min-width: 600px) {
   main {
     max-width: 700px;
-    margin: 40px auto;
+    margin: 20px auto ;
     padding: 2rem;
     flex-direction: column;
     align-items: stretch;
@@ -233,28 +228,13 @@ li:hover {
   #task-input select,
   #task-input button {
     flex: 1 1 120px;
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  }
-  
-
-  #filters {
-    justify-content: center;
   }
 
   li {
     flex-wrap: nowrap;
-    align-items: center;
   }
 
   .task-info {
     flex: 2;
-  }
-
-  .task-actions {
-    display: flex;
-    gap: 0.5rem;
   }
 }

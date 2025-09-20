@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Task Manager</h1>
+    <button id="theme-toggle"  aria-label="Toggle theme">⏾</button>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Task Input Section -->
+    <section id="task-input">
+      <input type="text" id="task-title" placeholder="Enter new task">
+      
+      <select id="task-priority">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+
+      <input type="date" id="task-date">
+      <button id="add-task">Add Task</button>
+      <button id="clear-all">Clear All</button>
+    </section>
+
+    <!-- Filter Buttons -->
+    <section id="filters">
+      <button data-filter="all" class="filter-btn active">All</button>
+      <button data-filter="pending" class="filter-btn">Pending</button>
+      <button data-filter="completed" class="filter-btn">Completed</button>
+    </section>
+
+    <!-- Task List Section -->
+    <section id="task-list">
+      <h2>Your Tasks</h2>
+      <ul id="tasks"></ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Task Manager App © 2025</p>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
